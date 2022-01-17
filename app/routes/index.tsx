@@ -1,36 +1,57 @@
-import { Hero, Link } from "~/Components";
-import { Duplicate, ExternalLink } from "~/Icons";
+import { useLoaderData } from "remix";
+import { Hero, HighlightedProject, Navbar, ProjectCard } from "~/components";
+import { getProjects } from "~/projects";
+import { IProject } from "~/types";
+
+export function loader() {
+  return getProjects();
+}
 
 export default function Index() {
+  const projects: IProject[] = useLoaderData();
   return (
-    <div className="bg-black flex justify-center min-h-screen w-screen">
-      <main className="relative z-10 w-full px-4 pt-10 mx-auto sm:max-w-screen-sm">
-        <Hero />
-        <section className="w-full mt-16">
-          <h2 className="text-white text-2xl font-semibold mb-6">Projects</h2>
-          <div className="w-full min-h-fit flex flex-row items-start p-3 md:p-7 bg-dark-grey rounded-xl">
-            <div className="w-full flex flex-col">
-              <h3 className="text-xl text-white font-medium leading-8 mb-2 font-poppins">
-                create-rest-api
+    <main className="w-full min-h-screen bg-bgColor flex justify-center">
+      <section className="max-w-2xl w-5/6">
+        <Navbar />
+        <article>
+          <Hero />
+          <section className="w-full mt-24">
+            <div className="mb-8">
+              <h3 className="text-4xl font-poppins font-semibold text-white">
+                Projects
               </h3>
-              <p className="text-lg text-white opacity-50 font-normal mb-2 font-poppins">
-                A CLI tool to create a new rest api backend app very fast with
-                ease.
-              </p>
-              <div className="w-80 h-11 bg-light-grey rounded-md p-2 flex flex-row justify-between items-center">
-                <h4 className="text-sm text-white opacity-80 font-poppins">
-                  npx create-rest-api
-                </h4>
-                <Duplicate />
+              <h5 className="text-lg font-poppins text-white opacity-60 mt-2">
+                Lists of projects that I'm proud of.
+              </h5>
+            </div>
+            <div className="flex flex-col gap-4">
+              <HighlightedProject
+                title="lilslide"
+                description="This is a lil web application to make slide very easily and with a very
+                intuitive interface."
+                image="/lilslide.png"
+                tags={["wip"]}
+              />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                {projects.map((project, projectIdx) => (
+                  <ProjectCard
+                    title={project.title}
+                    description={project.description}
+                    logo={project.logo}
+                    url={project.url}
+                    key={projectIdx}
+                  />
+                ))}
               </div>
             </div>
-            <Link
-              url="https://github.com/create-rest-api"
-              label={<ExternalLink />}
-            />
-          </div>
-        </section>
-      </main>
-    </div>
+          </section>
+        </article>
+        <footer className="mt-32 mb-9">
+          <p className="font-poppins text-white text-sm opacity-60">
+            Judicaël A. &copy; {new Date().getFullYear()}
+          </p>
+        </footer>
+      </section>
+    </main>
   );
 }

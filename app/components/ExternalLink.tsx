@@ -1,9 +1,9 @@
-interface ILinkProps {
-  url: string;
+interface IExternalLinkProps {
   label: string | React.ReactNode;
+  url: string;
 }
 
-const Link = ({ url, label }: ILinkProps) => {
+const ExternalLink = ({ label, url }: IExternalLinkProps) => {
   return (
     <a href={url} target="_blank" rel="noopener" className="font-poppins">
       {label}
@@ -11,4 +11,4 @@ const Link = ({ url, label }: ILinkProps) => {
   );
 };
 
-export default Link;
+export default ExternalLink;
