@@ -8,7 +8,7 @@ import {
 } from "remix";
 import type { MetaFunction, LinksFunction } from "remix";
 import styles from "./tailwind.css";
-import { DESCRIPTION, DOMAINS, TITLE } from "./constants";
+import { DESCRIPTION, DOMAINS, SOCIAL_IMAGE_URL, TITLE } from "./constants";
 
 export const links: LinksFunction = () => {
   return [
@@ -27,7 +27,29 @@ export const links: LinksFunction = () => {
 };
 
 export const meta: MetaFunction = () => {
-  return { title: "Judicael - Designer, developer" };
+  return {
+    "og:locale": "en",
+    "og:site_name": "Judicaël",
+    "og:type": "website",
+    "og:description": DESCRIPTION,
+    "og:url": DOMAINS,
+    "og:title": TITLE,
+    "og:image": SOCIAL_IMAGE_URL,
+    "twitter:card": "summary_large_image",
+    "twitter:creator": "@judicael_andria",
+    "twitter:site": "@judicael_andria",
+    "twitter:description": DESCRIPTION,
+    "twitter:image": SOCIAL_IMAGE_URL,
+    "X-UA-Compatible": "IE=edge,chrome=1",
+    author: "Judicaël",
+    HandheldFriendly: "True",
+    language: "en",
+    pagename: "Judicaël",
+    robots: "index, follow",
+    title: TITLE,
+    description: DESCRIPTION,
+    viewport: "width=device-width, initial-scale=1, viewport-fit=cover",
+  };
 };
 
 export default function App() {
@@ -35,17 +57,7 @@ export default function App() {
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
         <link rel="icon" type="image/x-icon" href="/favicon.png" />
-        <meta property="og:title" content={TITLE} />
-        <meta property="og:url" content={DOMAINS} />
-        <meta property="og:description" content={DESCRIPTION} />
-        <meta name="author" content="Judicael" />
-        <meta name="image" property="og:image" content="/social.png" />
-        <meta name="twitter:creator" content="@judicael_andria" />
-        <meta name="twitter:site" content={DOMAINS} />
-        <meta name="twitter:image" content="/social.png" />
-        <meta name="twitter:description" content={DESCRIPTION} />
         <Meta />
         <Links />
       </head>
