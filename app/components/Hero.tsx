@@ -1,3 +1,5 @@
+import { DESCRIPTION } from "~/constants";
+
 const Hero = () => {
   return (
     <section className="w-full mt-28 flex flex-col gap-4 justify-center items-center">
@@ -6,12 +8,7 @@ const Hero = () => {
       </h3>
       <div className="mt-16">
         <h4 className="text-base text-white opacity-80 font-poppins leading-8">
-          Welcome to my digital garden, this is the place where I share some of
-          side projects. I love building and experimenting things to learn more
-          about the web and mobile. I think this is the best way to learn for
-          me. Dreamin up and building a project that I wish existed is my
-          passion or project that exist but I can do something to make it more
-          awesome.
+          {DESCRIPTION}
         </h4>
         <h4 className="text-base text-white opacity-80 font-poppins leading-8 mt-8">
           I think this is the best way to learn for me. Sharing what you learn
