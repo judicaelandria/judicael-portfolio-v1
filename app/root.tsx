@@ -8,7 +8,13 @@ import {
 } from "remix";
 import type { MetaFunction, LinksFunction } from "remix";
 import styles from "./tailwind.css";
-import { DESCRIPTION, DOMAINS, SOCIAL_IMAGE_URL, TITLE } from "./constants";
+import {
+  DESCRIPTION,
+  DOMAINS,
+  SOCIAL_IMAGE_URL,
+  TITLE,
+  TWITTER_DESCRIPTION,
+} from "./constants";
 
 export const links: LinksFunction = () => {
   return [
@@ -38,8 +44,9 @@ export const meta: MetaFunction = () => {
     "twitter:card": "summary_large_image",
     "twitter:creator": "@judicael_andria",
     "twitter:site": "@judicael_andria",
-    "twitter:description": DESCRIPTION,
+    "twitter:description": TWITTER_DESCRIPTION,
     "twitter:image": SOCIAL_IMAGE_URL,
+    "twitter:title": TITLE,
     "X-UA-Compatible": "IE=edge,chrome=1",
     author: "Judicaël",
     HandheldFriendly: "True",
