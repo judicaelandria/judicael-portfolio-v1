@@ -2,10 +2,10 @@ import { IProject } from "./types";
 
 const projects: IProject[] = [
   {
-    title: "create-rest-api",
+    title: "create-api-rest",
     description: "A command line tool to create a backend api with node",
     logo: "/projectLogo/logo-terminal.svg",
-    url: "https://github.com/judicaelandria/create-rest-api",
+    url: "https://github.com/judicaelandria/create-api-rest",
   },
   {
     title: "Bookshelf",
