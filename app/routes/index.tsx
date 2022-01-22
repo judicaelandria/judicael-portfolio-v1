@@ -26,6 +26,7 @@ export default function Index() {
             </div>
             <div className="flex flex-col gap-4">
               <HighlightedProject
+                url="https://github.com/judicaelandria/lilslide"
                 title="lilslide"
                 description="This is a lil web application to make slide very easily and with a very
                 intuitive interface."
