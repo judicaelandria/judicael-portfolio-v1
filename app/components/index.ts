@@ -1,4 +1,4 @@
-export { default as Navbar } from "./Navbar";
+export { default as Navbar } from "./Navbar.client";
 export { default as Hero } from "./Hero";
 export { default as ExternalLink } from "./ExternalLink";
 export { default as HighlightedProject } from "./HighlightedProject";
