@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useLoaderData } from "remix";
 import { Hero, HighlightedProject, Navbar, ProjectCard } from "~/components";
 import { getProjects } from "~/projects";
@@ -8,11 +9,17 @@ export function loader() {
 }
 
 export default function Index() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const projects: IProject[] = useLoaderData();
   return (
     <main className="w-full min-h-screen bg-bgColor flex justify-center">
       <section className="max-w-2xl w-5/6">
-        <Navbar />
+        {mounted ? <Navbar /> : null}
         <article>
           <Hero />
           <section className="w-full mt-24">
@@ -26,6 +33,7 @@ export default function Index() {
             </div>
             <div className="flex flex-col gap-4">
               <HighlightedProject
+                url="https://github.com/judicaelandria/lilslide"
                 title="lilslide"
                 description="This is a lil web application to make slide very easily and with a very
                 intuitive interface."
