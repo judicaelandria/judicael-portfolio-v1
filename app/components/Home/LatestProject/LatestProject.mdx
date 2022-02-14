@@ -1,0 +1,34 @@
+---
+title: Project
+description: Lists of projects that I'm proud of.
+projects:
+  Latest:
+    - name: "create-api-rest"
+      desc: "A command line tool to create a backend api with node"
+      logo: "/projectLogo/logo-terminal.svg"
+      link: "https://github.com/judicaelandria/create-api-rest"
+    - name: "Bookshelf"
+      desc: "Mobile application to manage the books in a library"
+      logo: "/projectLogo/bookshelf.svg"
+      link: "https://github.com/judicaelandria/library-app"
+    - name: "Yannick"
+      desc: "Portfolio of a Machine learning engineeer"
+      logo: "/projectLogo/yannick-icon.png"
+      link: "https://yannick.vercel.app"
+
+  Ongoing:
+    - name: "lilslide"
+      desc: "This is a lil web application to make slide very easily and with a very intuitive interface."
+      logo: "/lilslide.png"
+      link: "https://github.com/judicaelandria/lilslide"
+      tags: [WIP]
+---
+
+import ProjectList from "../../ProjectList/ProjectList";
+
+<ProjectList
+  title={attributes.title}
+  description={attributes.description}
+  projects={attributes.projects.Latest}
+  onGoing={attributes.projects.Ongoing[0]}
+/>
