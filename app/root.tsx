@@ -16,6 +16,7 @@ import {
   TWITTER_DESCRIPTION,
 } from "./constants";
 import globalStyles from "~/styles/global.css";
+import ErrorBoundaryPage from "./components/ErrorBoundary/ErrorBoundary";
 
 export const links: LinksFunction = () => {
   return [
@@ -63,6 +64,10 @@ export const meta: MetaFunction = () => {
     viewport: "width=device-width, initial-scale=1, viewport-fit=cover",
   };
 };
+
+export function ErrorBoundary() {
+  return <ErrorBoundaryPage />;
+}
 
 export default function App() {
   return (

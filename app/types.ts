@@ -1,6 +1,6 @@
 export interface IProject {
-  title: string;
-  description: string;
+  name: string;
+  desc: string;
   logo: string;
-  url: string;
+  link: string;
 }

@@ -1,0 +1,34 @@
+{
+  "version": "cfe3940d",
+  "entry": {
+    "module": "/build/entry.client-JVKVU6AU.js",
+    "imports": [
+      "/build/_shared/chunk-LJTZTHSP.js"
+    ]
+  },
+  "routes": {
+    "root": {
+      "id": "root",
+      "path": "",
+      "module": "/build/root-YLE36WMW.js",
+      "imports": [
+        "/build/_shared/chunk-D74CXQT4.js"
+      ],
+      "hasAction": false,
+      "hasLoader": false,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": true
+    },
+    "routes/index": {
+      "id": "routes/index",
+      "parentId": "root",
+      "index": true,
+      "module": "/build/routes/index-BJYTZ7GA.js",
+      "hasAction": false,
+      "hasLoader": true,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
+    }
+  },
+  "url": "/build/manifest-CFE3940D.js"
+}
