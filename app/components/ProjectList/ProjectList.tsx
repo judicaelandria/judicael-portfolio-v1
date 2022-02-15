@@ -43,6 +43,7 @@ const ProjectList = ({
               desc={project.desc}
               logo={project.logo}
               link={project.link}
+              dev={project.dev}
               key={projectIdx}
             />
           ))}

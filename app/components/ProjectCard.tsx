@@ -6,9 +6,10 @@ interface IProjectCardProps {
   desc: string;
   logo: string;
   link: string;
+  dev?: boolean
 }
 
-const ProjectCard = ({ name, desc, logo, link }: IProjectCardProps) => {
+const ProjectCard = ({ name, desc, logo, link, dev = false }: IProjectCardProps) => {
   return (
     <ExternalLink
       url={link}
@@ -18,7 +19,7 @@ const ProjectCard = ({ name, desc, logo, link }: IProjectCardProps) => {
           <div className="flex flex-col ml-4">
             <h4 className="font-poppins text-lg text-white">{name}</h4>
             <p className="font-poppins text-white text-xs">{desc} </p>
-            <span className="text-sx font-poppins text-white/80">ONGOING</span>
+            {dev ? <span className="text-sx font-poppins text-white/80">ONGOING</span> : null}
           </div>
         </div>
       }
