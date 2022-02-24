@@ -32,17 +32,17 @@ const Navbar = () => {
         <Link to="/">
           <img src={Logo} alt="Judicael logo" />
         </Link>
-        <ul className="list-none flex flex-row">
-          <li className="text-xs md:text-base font-poppins text-white mr-6 cursor-pointer">
+        <ul className="list-none flex flex-row gap-3 md:gap-6">
+          <li className="text-xs md:text-base font-poppins text-white cursor-pointer">
             <Link to="/posts">Blog</Link>
           </li>
-          <li className="text-xs md:text-base font-poppins text-white mr-6 cursor-pointer">
+          <li className="text-xs md:text-base font-poppins text-white cursor-pointer">
             <ExternalLink label="Twitter" url={TWITTER_URL} />
           </li>
-          <li className="text-xs md:text-base font-poppins text-white mr-6 cursor-pointer">
+          <li className="text-xs md:text-base font-poppins text-white cursor-pointer">
             <ExternalLink label="Github" url={GITHUB_URL} />
           </li>
-          <li className="md:text-base font-poppins text-purple cursor-pointer">
+          <li className="text-xs md:text-base font-poppins text-purple cursor-pointer">
             <ExternalLink label="Say hi!" url={`mailto:${EMAIL}`} />
           </li>
         </ul>
