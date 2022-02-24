@@ -5,3 +5,6 @@ node_modules
 /public/build
 .env
 /app/tailwind.css
+api
+yarn.lock
+api/build

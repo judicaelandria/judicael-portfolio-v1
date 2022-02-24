@@ -8,10 +8,11 @@ module.exports = {
       transparent: "transparent",
       current: "currentColor",
       white: "#ffffff",
-      bgColor: "#111111",
+      bgColor: "#0E141B",
       dark: "#1f1f1f",
       black: "#181818",
       purple: "#7B61FF",
+      darkBlue: "#151F28",
     },
     extend: {
       width: {

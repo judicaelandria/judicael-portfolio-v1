@@ -19,7 +19,7 @@ const HighlightedProject = ({
     <ExternalLink
       url={url}
       label={
-        <div className="w-full gap-2 h-auto md:h-64 flex flex-col-reverse md:flex-row justify-between items-center md:p-8 bg-dark rounded-xl">
+        <div className="w-full gap-2 h-auto md:h-64 flex flex-col-reverse md:flex-row justify-between items-center md:p-8 bg-darkBlue rounded-xl">
           <div className="flex flex-col p-8 md:p-0">
             <h4 className="text-white opacity-80 text-xl font-semibold font-poppins">
               {title}

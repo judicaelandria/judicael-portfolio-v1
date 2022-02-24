@@ -16,7 +16,7 @@ import {
   TWITTER_DESCRIPTION,
 } from "./constants";
 import globalStyles from "~/styles/global.css";
-import ErrorBoundaryPage from "./components/ErrorBoundary/ErrorBoundary";
+import { ErrorPage, SEO, Wrapper } from "./components";
 
 export const links: LinksFunction = () => {
   return [
@@ -38,36 +38,7 @@ export const links: LinksFunction = () => {
   ];
 };
 
-export const meta: MetaFunction = () => {
-  return {
-    "og:locale": "en",
-    "og:site_name": "Judicaël",
-    "og:type": "website",
-    "og:description": DESCRIPTION,
-    "og:url": DOMAINS,
-    "og:title": TITLE,
-    "og:image": SOCIAL_IMAGE_URL,
-    "twitter:card": "summary_large_image",
-    "twitter:creator": "@judicael_andria",
-    "twitter:site": "@judicael_andria",
-    "twitter:description": TWITTER_DESCRIPTION,
-    "twitter:image": SOCIAL_IMAGE_URL,
-    "twitter:title": TITLE,
-    "X-UA-Compatible": "IE=edge,chrome=1",
-    author: "Judicaël",
-    HandheldFriendly: "True",
-    language: "en",
-    pagename: "Judicaël",
-    robots: "index, follow",
-    title: TITLE,
-    description: DESCRIPTION,
-    viewport: "width=device-width, initial-scale=1, viewport-fit=cover",
-  };
-};
-
-export function ErrorBoundary() {
-  return <ErrorBoundaryPage />;
-}
+export const meta: MetaFunction = () => SEO({ title: TITLE });
 
 export default function App() {
   return (
@@ -78,8 +49,17 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
-        <Outlet />
+      <body className="bg-bgColor min-h-screen flex flex-col">
+        <Wrapper>
+          <Outlet />
+        </Wrapper>
+        <footer className="w-full mt-auto flex justify-center">
+          <div className="max-w-2xl w-5/6 pt-20 py-4">
+            <p className="font-poppins text-white text-sm opacity-60">
+              Judicaël A. &copy; {new Date().getFullYear()}
+            </p>
+          </div>
+        </footer>
         <ScrollRestoration />
         <Scripts />
         {process.env.NODE_ENV === "development" && <LiveReload />}
@@ -87,3 +67,19 @@ export default function App() {
     </html>
   );
 }
+
+// export function ErrorBoundary() {
+//   return (
+//     <html>
+//       <head>
+//         <title>Oh no!</title>
+//         <Meta />
+//         <Links />
+//       </head>
+//       <body>
+//         <ErrorPage />
+//         <Scripts />
+//       </body>
+//     </html>
+//   );
+// }
