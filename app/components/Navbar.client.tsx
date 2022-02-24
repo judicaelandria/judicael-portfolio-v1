@@ -1,4 +1,5 @@
 import { useLayoutEffect, useState, useRef } from "react";
+import { Link } from "remix";
 import Logo from "~/assets/logo.svg";
 import { EMAIL, GITHUB_URL, TWITTER_URL } from "~/constants";
 import ExternalLink from "./ExternalLink";
@@ -28,15 +29,20 @@ const Navbar = () => {
       }`}
     >
       <nav className="max-w-2xl w-5/6 flex flex-row justify-between items-center">
-        <img src={Logo} alt="Judicael logo" />
+        <Link to="/">
+          <img src={Logo} alt="Judicael logo" />
+        </Link>
         <ul className="list-none flex flex-row">
-          <li className="text-sm md:text-base font-poppins text-white mr-6 cursor-pointer">
+          <li className="text-xs md:text-base font-poppins text-white mr-6 cursor-pointer">
+            <Link to="/posts">Blog</Link>
+          </li>
+          <li className="text-xs md:text-base font-poppins text-white mr-6 cursor-pointer">
             <ExternalLink label="Twitter" url={TWITTER_URL} />
           </li>
-          <li className="text-sm md:text-base font-poppins text-white mr-6 cursor-pointer">
+          <li className="text-xs md:text-base font-poppins text-white mr-6 cursor-pointer">
             <ExternalLink label="Github" url={GITHUB_URL} />
           </li>
-          <li className="text-sm md:text-base font-poppins text-purple cursor-pointer">
+          <li className="md:text-base font-poppins text-purple cursor-pointer">
             <ExternalLink label="Say hi!" url={`mailto:${EMAIL}`} />
           </li>
         </ul>

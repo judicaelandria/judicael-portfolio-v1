@@ -1,3 +1,9 @@
+:root {
+  --dark-blue: #011627;
+  --blue: #5773ff;
+  --violet: #9379f9;
+}
+
 body::-webkit-scrollbar {
   width: 6px;
 }
@@ -6,4 +12,37 @@ body::-webkit-scrollbar-track {
 }
 body::-webkit-scrollbar-thumb {
   background-color: #1f1f1f;
+}
+
+pre {
+  background-color: var(--dark-blue);
+  border-radius: 8px;
+  margin: 18px 0px;
+  padding: 12px;
+}
+
+code {
+  background-color: inherit !important;
+}
+
+blockquote {
+  background-color: var(--dark-blue);
+  border-radius: 0 8px 8px 0;
+  margin: 18px 0px;
+  padding: 16px;
+  border-left-width: 4px;
+  border-left-color: var(--blue);
+}
+
+.hljs {
+  color: white !important;
+}
+
+.hljs-keyword {
+  color: var(--violet) !important;
+}
+
+.function_,
+.class_ {
+  color: var(--blue) !important;
 }

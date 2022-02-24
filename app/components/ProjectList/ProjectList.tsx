@@ -1,5 +1,6 @@
 import { IProject } from "~/types";
 import { HighlightedProject, ProjectCard } from "..";
+import Heading from "../Heading";
 
 interface IOnGoingProject extends IProject {
   tags: string[];
@@ -21,9 +22,7 @@ const ProjectList = ({
   return (
     <section className="w-full mt-24">
       <div className="mb-8">
-        <h3 className="text-4xl font-poppins font-semibold text-white">
-          {title}
-        </h3>
+        <Heading title={title} />
         <h5 className="text-lg font-poppins text-white opacity-60 mt-2">
           {description}
         </h5>

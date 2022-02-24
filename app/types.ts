@@ -3,4 +3,5 @@ export interface IProject {
   desc: string;
   logo: string;
   link: string;
+  dev?: boolean;
 }
