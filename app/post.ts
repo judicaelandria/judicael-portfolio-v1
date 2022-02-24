@@ -16,7 +16,7 @@ export type PostMarkdownAttributes = {
   date: string;
 };
 
-const dir = process.env.NODE_ENV === "development" ? "../.." : "../../build";
+const dir = process.env.NODE_ENV === "development" ? "../.." : "../../../../..";
 
 const postsPath = path.join(__dirname, dir, "posts");
 
