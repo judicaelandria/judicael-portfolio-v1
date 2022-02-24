@@ -16,7 +16,9 @@ export type PostMarkdownAttributes = {
   date: string;
 };
 
-const postsPath = path.join(__dirname, "../..", "posts");
+const dir = process.env.NODE_ENV === "development" ? "../.." : "../../..";
+
+const postsPath = path.join(__dirname, dir, "posts");
 
 function isValidPostAttributes(
   attributes: any
@@ -25,17 +27,19 @@ function isValidPostAttributes(
 }
 
 export async function getPosts() {
-  const dir = await fs.readdir(postsPath);
+  const dir = await fs.readdir(postsPath, {
+    withFileTypes: true,
+  });
   return Promise.all(
     dir.map(async (filename) => {
-      const file = await fs.readFile(path.join(postsPath, filename));
+      const file = await fs.readFile(path.join(postsPath, filename.name));
       const { attributes } = parseFrontMatter(file.toString());
       invariant(
         isValidPostAttributes(attributes),
         `${filename} has bad meta data!`
       );
       return {
-        slug: filename.replace(/\.md$/, ""),
+        slug: filename.name.replace(/\.md$/, ""),
         title: attributes.title,
         date: attributes.date,
       };
