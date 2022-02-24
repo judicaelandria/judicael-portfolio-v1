@@ -16,9 +16,10 @@ export type PostMarkdownAttributes = {
   date: string;
 };
 
-const dir = process.env.NODE_ENV === "development" ? "../.." : "../../../app";
-
-const postsPath = path.join(__dirname, dir, "posts");
+const postsPath =
+  process.env.NODE_ENV === "development"
+    ? path.join(__dirname, "../..", "posts")
+    : path.join(process.cwd(), "posts");
 
 function isValidPostAttributes(
   attributes: any
