@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLoaderData } from "remix";
-import { Hero, LatestProject, Navbar } from "~/components";
+import { Hero, LatestProject, Navbar, LatestPost } from "~/components";
 import ErrorBoundary from "~/components/ErrorBoundary/ErrorBoundary";
 import { getProjects } from "~/projects";
 import { IProject } from "~/types";
@@ -26,6 +26,7 @@ export default function Index() {
         <article>
           <Hero />
           <LatestProject />
+          <LatestPost />
         </article>
         <footer className="mt-32 mb-9">
           <p className="font-poppins text-white text-sm opacity-60">
